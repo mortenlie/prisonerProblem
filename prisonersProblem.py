@@ -104,7 +104,7 @@ def makeHistogram(lst):
 
 N = 100
 M = 50
-runs = 1000
+runs = 100000
 
 nPrisonersSuccessRandom = runRandomStrategy(N,M, runs)
 xRand, yRand = makeHistogram(nPrisonersSuccessRandom)
@@ -115,8 +115,12 @@ fig,axs = plt.subplots(2)
 
 axs[0].bar(xRand, yRand)
 axs[0].grid(True)
+axs[0].set_xlabel("Num prisoners made it, random pick")
+axs[0].set_ylabel("Num simulations succeeded")
 
 axs[1].bar(xCirc, yCirc)
 axs[1].grid(True)
+axs[1].set_xlabel("Num prisoners made it, circular strategy")
+axs[1].set_ylabel("Num simulations succeeded")
 
 plt.show()
